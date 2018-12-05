@@ -35,13 +35,17 @@ available_countries = df['Country'].unique()
 app.layout = html.Div([
     html.Div([
         html.H1(
-            children = 'Task 1',
+            children = 'Francisco Morillo Cloud Computing Final Project',
+            style = {'font-family': 'Arial, Helvetica, sans-serif', 'text-align': 'center'}
+        ),
+        html.H1(
+            children = 'Exercise 1',
             style = {'font-family': 'Arial, Helvetica, sans-serif', 'text-align': 'center'}
         ),
         html.Div([
             html.P(
                 children = 'Select the first indicator:',
-                style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
+                style = {'font-size': '20px', 'font-family': 'Arial, Helvetica, sans-serif'}
             ),
             dcc.Dropdown(
                 id = 'xaxis-column1',
@@ -61,7 +65,7 @@ app.layout = html.Div([
         html.Div([
             html.P(
                 children = 'Select the second indicator:',
-                style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
+                style = {'font-size': '20px', 'font-family': 'Arial, Helvetica, sans-serif'}
             ),
             dcc.Dropdown(
                 id = 'yaxis-column1',
@@ -97,7 +101,7 @@ app.layout = html.Div([
     ),
     html.Div([
         html.H1(
-            children = 'Task 2',
+            children = 'Exercise 2',
             style = {'font-family': 'Arial, Helvetica, sans-serif', 'text-align': 'center'}
         ),
         html.Div([
