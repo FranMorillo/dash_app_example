@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 
 import dash
@@ -14,6 +14,7 @@ import flask
 app = dash.Dash(__name__)
 server = app.server
 app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
+
 df = pd.read_csv('nama_10_gdp_1_Data.csv', error_bad_lines = False, engine = 'python', na_values = [':', 'NaN'])
 df.groupby('GEO').size()
 df=df[~df.GEO.str.contains("Euro")]
@@ -23,11 +24,15 @@ df=df.rename(index=str, columns={"TIME": "Year", "GEO": "Country",'UNIT':'Unit',
 
 df['Indicator'] = df['Indicator Name'] + ' (' + df['Unit'] + ')'
 
-app = dash.Dash()
 available_indicators = df['Indicator'].unique()
 available_countries = df['Country'].unique()
 
 app.layout = html.Div([
+    html.Div([
+        html.H1(
+            children = 'Francisco Morillo Final Proyect Cloud Computing',
+            style = {'font-family': 'Arial, Helvetica, sans-serif', 'text-align': 'center'}
+        ),
     html.Div([
         html.Div([
             dcc.Dropdown(
@@ -168,10 +173,4 @@ def update_graph(country_name, yaxis_column_name):
 
 if __name__ == '__main__':
     app.run_server()
-
-
-# In[2]:
-
-
-get_ipython().run_line_magic('tb', '')
 
