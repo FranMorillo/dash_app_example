@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 
 import dash
@@ -14,7 +14,6 @@ import flask
 app = dash.Dash(__name__)
 server = app.server
 app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
-
 df = pd.read_csv('nama_10_gdp_1_Data.csv', error_bad_lines = False, engine = 'python', na_values = [':', 'NaN'])
 df.groupby('GEO').size()
 df=df[~df.GEO.str.contains("Euro")]
@@ -28,11 +27,6 @@ available_indicators = df['Indicator'].unique()
 available_countries = df['Country'].unique()
 
 app.layout = html.Div([
-    html.Div([
-        html.H1(
-            children = 'Francisco Morillo Final Proyect Cloud Computing',
-            style = {'font-family': 'Arial, Helvetica, sans-serif', 'text-align': 'center'}
-        ),
     html.Div([
         html.Div([
             dcc.Dropdown(
