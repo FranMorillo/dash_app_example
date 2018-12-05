@@ -35,7 +35,7 @@ df['Indicator'] = df['Indicator Name'] + ' (' + df['Unit'] + ')'
 available_indicators = df['Indicator'].unique()
 available_countries = df['Country'].unique()
 
-app.layout = html.Div(style={'backgroundColor': colors['background']},[
+app.layout = html.Div([
     html.Div([
         html.H1(
             children = 'Francisco Morillo Cloud Computing Final Project',
