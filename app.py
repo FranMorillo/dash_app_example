@@ -47,7 +47,7 @@ app.layout = html.Div([
         ),
         html.Div([
             html.P(
-                children = 'Select the first indicator:',
+                children = 'Select indicator:',
                 style = {'font-size': '20px', 'font-family': 'Arial, Helvetica, sans-serif'}
             ),
             dcc.Dropdown(
@@ -67,7 +67,7 @@ app.layout = html.Div([
 
         html.Div([
             html.P(
-                children = 'Select the second indicator:',
+                children = 'Select indicator:',
                 style = {'font-size': '20px', 'font-family': 'Arial, Helvetica, sans-serif'}
             ),
             dcc.Dropdown(
@@ -109,8 +109,8 @@ app.layout = html.Div([
         ),
         html.Div([
             html.P(
-                children = 'Select a country:',
-                style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
+                children = 'Select country:',
+                style = {'font-size': '20px', 'font-family': 'Arial, Helvetica, sans-serif'}
             ),
             dcc.Dropdown(
                 id = 'country2',
@@ -122,8 +122,8 @@ app.layout = html.Div([
 
         html.Div([
             html.P(
-                children = 'Select an indicator:',
-                style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
+                children = 'Select indicator:',
+                style = {'font-size': '20px', 'font-family': 'Arial, Helvetica, sans-serif'}
             ),
             dcc.Dropdown(
                 id = 'yaxis-column2',
