@@ -16,7 +16,10 @@ import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
 import flask
-
+colors = {
+    'background': '#111111',
+    'text': '#7FDBFF'
+}
 app = dash.Dash(__name__)
 server = app.server
 app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
@@ -32,11 +35,11 @@ df['Indicator'] = df['Indicator Name'] + ' (' + df['Unit'] + ')'
 available_indicators = df['Indicator'].unique()
 available_countries = df['Country'].unique()
 
-app.layout = html.Div([
+app.layout = html.Div(style={'backgroundColor': colors['background']},[
     html.Div([
         html.H1(
             children = 'Francisco Morillo Cloud Computing Final Project',
-            style = {'font-family': 'Arial, Helvetica, sans-serif', 'text-align': 'center'}
+            style = {'font-family': 'Arial, Helvetica, sans-serif', 'text-align': 'center','color': colors['text']}
         ),
         html.H1(
             children = 'Exercise 1',
