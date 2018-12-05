@@ -4,6 +4,12 @@
 # In[1]:
 
 
+
+# coding: utf-8
+
+# In[1]:
+
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -28,7 +34,15 @@ available_countries = df['Country'].unique()
 
 app.layout = html.Div([
     html.Div([
+        html.H1(
+            children = 'Task 1',
+            style = {'font-family': 'Arial, Helvetica, sans-serif', 'text-align': 'center'}
+        ),
         html.Div([
+            html.P(
+                children = 'Select the first indicator:',
+                style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
+            ),
             dcc.Dropdown(
                 id = 'xaxis-column1',
                 options = [{'label': i, 'value': i} for i in available_indicators],
@@ -45,6 +59,10 @@ app.layout = html.Div([
         style = {'width': '48%', 'display': 'inline-block'}),
 
         html.Div([
+            html.P(
+                children = 'Select the second indicator:',
+                style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
+            ),
             dcc.Dropdown(
                 id = 'yaxis-column1',
                 options = [{'label': i, 'value': i} for i in available_indicators],
@@ -78,7 +96,15 @@ app.layout = html.Div([
         style = {'margin': '50px 10px 20px 10px', 'background-color': 'black', 'height': '2px'}
     ),
     html.Div([
+        html.H1(
+            children = 'Task 2',
+            style = {'font-family': 'Arial, Helvetica, sans-serif', 'text-align': 'center'}
+        ),
         html.Div([
+            html.P(
+                children = 'Select a country:',
+                style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
+            ),
             dcc.Dropdown(
                 id = 'country2',
                 options = [{'label': i, 'value': i} for i in available_countries],
@@ -88,6 +114,10 @@ app.layout = html.Div([
         style = {'width': '48%', 'display': 'inline-block', 'height': '130px'}),
 
         html.Div([
+            html.P(
+                children = 'Select an indicator:',
+                style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
+            ),
             dcc.Dropdown(
                 id = 'yaxis-column2',
                 options = [{'label': i, 'value': i} for i in available_indicators],
@@ -167,4 +197,5 @@ def update_graph(country_name, yaxis_column_name):
 
 if __name__ == '__main__':
     app.run_server()
+
 
